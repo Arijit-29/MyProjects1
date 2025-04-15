@@ -1,0 +1,23 @@
+
+  @font-face {
+    font-family: 'DS-Digital';
+    src: url('../assets/fonts/DS-DIGI.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .display{
+    margin: 5px 10px 10px 10px;
+    width: 210px;
+    font-size: 20px;
+   background-color:rgb(224, 224, 224);
+   border: 0px;
+   border-radius: 7.5px;
+   font-family: 'DS-Digital', monospace;
+   letter-spacing: 2px;
+   height: 25px;
+   font-size: 25px;
+   font-weight: 900;
+   color: rgb(93, 92, 92);
+  }
+
+  

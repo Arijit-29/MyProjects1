@@ -1,0 +1,7 @@
+.calculator{
+  border: 1px solid rgb(237, 234, 234);
+  border-radius: 15px;
+  background-color: rgb(92, 89, 89);
+  width: 240px;
+  height: 430px;
+}

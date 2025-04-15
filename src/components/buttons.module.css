@@ -1,0 +1,35 @@
+.button_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+  button{
+    width: 45px;
+    height:45px;
+    margin: 8px;
+    border-radius: 4px;
+    background-color:rgb(153, 152, 152);
+    font-size: 20px;
+    color: rgb(224, 224, 224);
+    border: 0px;
+    box-shadow: 0 8px 16px 0
+    rgba(0,0,0,0.24), 0 17px 50px 0 
+    rgba(0,0,0,0.19)
+  }
+  .red{
+    background-color:red
+  }
+  .red:active{
+    background-color: brown;
+  }
+  .green{
+    background-color: green
+  }
+  .green:active{
+   background-color:rgb(1, 94, 1) ;
+  }
+  button:active{
+    background-color: rgb(129, 129, 129);
+  }
+  
