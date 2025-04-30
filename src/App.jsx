@@ -3,6 +3,9 @@ import Display from './components/display.jsx'
 import Buttons from './components/buttons.jsx'
 import './App.css'
 import { useState } from 'react'
+import { create, all } from 'mathjs'
+const math = create(all)
+math.config({ number: 'BigNumber', precision: 20 })
 function App() {
     let [calVal,setcalVal]=useState("")
     const onButtonClicked=(buttonText)=>{
@@ -10,9 +13,22 @@ function App() {
          setcalVal("")
       }
     else  if(buttonText==='='){
-           const result=eval(calVal.replace(/×/g, '*'))
+           try{
+           const result=math.evaluate(calVal.replace(/×/g, '*')
+           .replace(/\b0+(?=\d)(?!\.)/g, '') 
+           .replace(/\*{2,}/g, '*')
+           .replace(/([+\-*/]){2,}/g, '$1'))
+           if (math.typeOf(result) === 'BigNumber') {
+            if (!result.isFinite() || result.isNaN()) {
+            setcalVal("math error")
+          } else
            setcalVal(result.toString())
+      }}
+      catch (err) {
+        setcalVal("math error")
+        console.error("Evaluation error:", err)
       }
+    }
       
       else{
         const newValue=calVal+ buttonText
